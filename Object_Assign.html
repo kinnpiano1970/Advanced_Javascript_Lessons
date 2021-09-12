@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="">
 
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+
+    <style>
+        #output {
+            border: 1px solid #999;
+            font-size: 30px;
+            color: red;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div id="main" class="main"></div>
+    <p id="output"></p>
+
+    <script type="text/javascript">
+        // THIS EXAMPLE DEMONSTRATES HOW OBJECTS FIND PROPERTIES USING THE PROTOTYPE 	CHAIN
+        var jediKnight = {
+
+            firstname: 'Default',
+            lastname: 'Default',
+            language: 'Galactic Basic',
+            occupation: 'Jedi Knight',
+            planet: 'Coruscant'
+
+
+        }
+
+        var anakin = Object.create(jediKnight)
+
+        anakin.firstname = 'Anakin';
+        anakin.lastname = 'Skywalker';
+
+          
+        console.log(anakin)
+            // This sets the PADME object to use the ANAKIN object as a prototype..
+            // The ANAKIN object in turn has the JEDIKNIGHT object as its prototype.
+        var padme = Object.create(anakin)
+
+        padme.firstname = 'Padme';
+
+
+        console.log(padme.occupation) // 
+            // This works out to "Jedi Knight" due to going down the prototype chain to find "occupation" 
+            // It finds "occupation" on the jediKnight object 
+            // So calling OCCUPATION on the PADME object works out to PADME'S occupation being a JEDI KNIGHT!!
+    </script>
+
+
+</body>
+
+</html>
