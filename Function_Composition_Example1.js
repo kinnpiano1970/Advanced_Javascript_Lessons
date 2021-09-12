@@ -56,8 +56,8 @@ function Dog(name, energy, breed) {
 // console.log(Dog);
 const leo = Dog('Leo', 10, 'German Shepard');
 const lassie = new Dog('Lassie', 25, 'Golden Retiever')
-console.log(leo);
-console.log(lassie);
-console.log(lassie.energy);
-lassie.eat(15);
-console.log(lassie.energy); 
+console.log(leo); // { breed: "German Shephard", energy: 10, name: 25 }
+console.log(lassie); // { breed: "Golden Retriever", energy: 25, name: "Lassie" }
+console.log(lassie.energy); // 25
+lassie.eat(15); // Lassie is eating
+console.log(lassie.energy); // 40
