@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
 
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="" />
+</head>
+
+<body>
+    <script>
+        /* 
+            This example shows how to use the NAMESPACE pattern to
+             take variables and functions out of the global namespace.
+                                            
+            */
+        // The object MYAPP will be the only variable accessible to the global object.
+        var MYAPP = MYAPP || {};
+        // This function is an IIFE that runs when the page loads.
+        // Then we pass in the MYAPP oject as a parameter to this function
+        (function(namespace) {
+            var prompt = "Welcome",
+                prompt2 = "How are you?",
+                prompt3 = "Good to see you again!",
+                counter = 0,
+                users = [];
+            // This makes this function PUBLIC
+            namespace.greeting = function(user) {
+                var greeting = prompt + " ";
+                if (newUser(user)) {
+                    greeting += prompt2;
+                } else {
+                    greeting += prompt3;
+                }
+                console.log(greeting);
+                counter++;
+            };
+            // This function IS PRIVATE
+            var newUser = function(user) {
+                for (let i = 0; i < users.length; i++) {
+                    if (users[i].toUpperCase() === user.toUpperCase()) {
+                        return false;
+                    }
+                }
+                // This function is PUBLIC
+                namespace.addUser(user);
+                return true;
+            };
+            // This function is PUBLIC
+            namespace.addUser = function(user) {
+                users.push(user);
+            };
+            // This function is public
+            namespace.numberOfGreetings = function() {
+                console.log("Total number of greetings: " + counter);
+            };
+        })(MYAPP);
+    </script>
+</body>
+
+</html>
