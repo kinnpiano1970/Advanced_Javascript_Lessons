@@ -87,20 +87,20 @@ function Person(name, energy) {
         friender(person)
     )
 }
-const leo = Dog('Leo', 10, 'German Shepard');
-const lassie = new Dog('Lassie', 25, 'Golden Retiever')
-const chuck = new Person('Chuck', 50);
+const leo = Dog('Leo', 10, 'German Shepard'); 
+const lassie = new Dog('Lassie', 25, 'Golden Retiever') // Create a new "Dog" object named "lassie"
+const chuck = new Person('Chuck', 50); // Create a new "Person" object named "chuck"
 console.log(leo);
 console.log(lassie);
-leo.bark();
-lassie.play();
-lassie.bark();
-console.log(lassie.energy);
-lassie.eat(15);
-console.log(lassie.energy);
-lassie.sleep(5);
-console.log(lassie.energy);
-console.log(chuck.energy);
-chuck.adopt('cat', 'rat', 'horse')
-chuck.adopt('dog')
-console.log(chuck.pets)
+leo.bark(); // Leo says Woof Woof!
+lassie.play(); // Lassie is playing
+lassie.bark(); // Lassie says Woof Woof!
+console.log(lassie.energy); // 24.5
+lassie.eat(15); // Lassie is eating, Lassie has 39.5 energy now!
+console.log(lassie.energy); // 39.5
+lassie.sleep(5); // Lassie is sleeping
+console.log(lassie.energy); // 44.5
+console.log(chuck.energy); // 50
+chuck.adopt('cat', 'rat', 'horse') // Adds cat, rat and horse to the chuck object pets array
+chuck.adopt('dog')// Add a dog to the chuck objects pets
+console.log(chuck.pets) // ['cat','rat','horse','dog']
