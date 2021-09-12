@@ -1,6 +1,6 @@
-constructor eater = (state) => ({
+const eater = (state) => ({
     eat(amount) {
-        console.log(`${state.name} is eateing.`);
+        console.log(`${state.name} is eating.`);
         state.energy += amount;
     }
 })
